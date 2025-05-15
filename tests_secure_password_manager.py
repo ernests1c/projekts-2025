@@ -15,3 +15,16 @@ def test_encryption_decryption(tmp_path, monkeypatch):
 
     assert result["username"] == "tester"
     assert result["password"] == "pass123"
+
+
+###
+# ja lietotājs ievada savu masterparoli, tā tiek saglabāta un var tālāk ievadīt datus
+# ja lietotājs vēlās iziet ārā no programmas, tad uzspiež 3 un var beigt darbību ar programmu
+
+# ja lietotājs ievada nepareizo masterparoli, tiek parādīts kļūdas ziņojums, un programma nepieļauj piekļuvi
+#ja lietotājs mēģina pievienot ierakstu ar jau esošu nosaukumu, ieraksts tiek pārrakstīts
+# ja lietotājs pievieno vairākus ierakstus pēc kārtas, visi tiek pareizi nolasīti un atšifrēti
+# ja lietotājs aizver programmu pēc saglabāšanas, visi dati joprojām ir pieejami - parole tiek pareizi nolasīta no JSON
+
+#ja lietotājs atstāj vienu vai vairākus laukus tukšus, programma nepieļauj ieraksta saglabāšanu un parāda kļūdu
+#ja lietotājs ievada paroli ar ļoti daudz simboliem, programma vēljoprojām to apstrādā.
